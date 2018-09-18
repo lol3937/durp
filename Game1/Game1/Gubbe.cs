@@ -7,19 +7,29 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    class Gubbe:Bas
+    class Gubbe : Bas
     {
         protected Rectangle hitbox;
-        protected int Hp;
-        protected int Speed;
+        protected int hp;
+        protected double speed;
 
 
-    public Rectangle HitBox
+        public Rectangle HitBox
         {
             get { return hitbox; }
             set { hitbox = value; }
         }
 
-        public 
+        public int HP
+        {
+            get { return hp; }
+            set { hp = value; }
+        }
+
+        public double Speed
+        {
+            get { return speed; }
+            set { speed = value; }
+        }
     }
 }
