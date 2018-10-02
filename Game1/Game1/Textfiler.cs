@@ -14,7 +14,7 @@ namespace Game1
 
         public static void Load(ContentManager manager)
         {
-            Player = manager.Load<Texture2D>("");
+            Player = manager.Load<Texture2D>("co mario");
         }
     }
 }

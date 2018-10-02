@@ -13,6 +13,7 @@ namespace Game1
         SpriteBatch spriteBatch;
 
         public static GameTime GameTime;
+        Player player;
 
         public Game1()
         {
@@ -32,6 +33,7 @@ namespace Game1
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            player = new Player();
         }
 
         /// <summary>
@@ -42,7 +44,7 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            Textfiler.Load(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -62,12 +64,12 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            GameTime = GameTime;
+            GameTime = gameTime;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             // TODO: Add your update logic here
-
+            player.Update();
             base.Update(gameTime);
         }
 
@@ -78,9 +80,10 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
+            player.Draw(spriteBatch);
             // TODO: Add your drawing code here
-
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
