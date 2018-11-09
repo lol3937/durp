@@ -4,6 +4,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
+
+    public enum Menu
+    {
+        Start,
+        Options,
+        Quit,
+        Pause,
+        InGame,
+    }
+
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -11,6 +22,7 @@ namespace Game1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Menu Meny = Menu.Start;
 
         public static GameTime GameTime;
         Player player;
@@ -70,6 +82,10 @@ namespace Game1
 
             // TODO: Add your update logic here
             player.Update();
+            if(Meny == Menu.Start)
+            {
+
+            }
             base.Update(gameTime);
         }
 
