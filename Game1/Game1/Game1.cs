@@ -84,7 +84,16 @@ namespace Game1
             player.Update();
             if(Meny == Menu.Start)
             {
-
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    Meny = Menu.InGame;
+                }
+            } else if (Meny == Menu.InGame)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                {
+                    Meny = Menu.Options;
+                }
             }
             base.Update(gameTime);
         }
@@ -98,6 +107,7 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             player.Draw(spriteBatch);
+
             // TODO: Add your drawing code here
             spriteBatch.End();
             base.Draw(gameTime);

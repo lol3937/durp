@@ -15,11 +15,13 @@ namespace Game1
         float gravity = 9.82f;
         double width;
         double height;
+        
         public Player()
         {
             Tex = Textfiler.Player;
             width = Tex.Width/10;
             height = Tex.Height/10;
+            speed = 1;
 
         }
         public override void Update()
