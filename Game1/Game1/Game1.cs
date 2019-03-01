@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Game1
 {
@@ -23,6 +24,7 @@ namespace Game1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Menu Meny = Menu.Start;
+        List<Platform> pList;
 
         public static GameTime GameTime;
         Player player;
@@ -46,6 +48,9 @@ namespace Game1
 
             base.Initialize();
             player = new Player();
+            pList = new List<Platform>();
+            pList.Add(new Platform(Textfiler.Plat, new Vector2(0, 430), new Rectangle(0, 430, 800, 40)));
+            
         }
 
         /// <summary>
@@ -57,6 +62,7 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Textfiler.Load(Content);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -107,6 +113,10 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             player.Draw(spriteBatch);
+            foreach (Platform p in pList)
+            {
+
+            }
 
             // TODO: Add your drawing code here
             spriteBatch.End();

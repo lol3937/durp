@@ -12,7 +12,7 @@ namespace Game1
     class Player : Gubbe
     {
         Vector2 velocity = Vector2.Zero;
-        float gravity = 9.82f;
+        float gravity = 15f;
         double width;
         double height;
         
@@ -21,9 +21,12 @@ namespace Game1
             Tex = Textfiler.Player;
             width = Tex.Width/10;
             height = Tex.Height/10;
-            speed = 1;
+            speed = 1.2;
 
         }
+
+
+
         public override void Update()
         {
             if (Keyboard.GetState().IsKeyDown(Keys.S))

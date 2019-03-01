@@ -11,10 +11,13 @@ namespace Game1
     static class Textfiler
     {
         public static Texture2D Player;
+        public static Texture2D Plat;
 
         public static void Load(ContentManager manager)
         {
             Player = manager.Load<Texture2D>("co mario");
+            Plat = manager.Load<Texture2D>("Mark");
         }
+
     }
 }
